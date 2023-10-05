@@ -4,7 +4,14 @@ vim.g.mapleader = ' '
 
 -- this one will go to the end of the line and delete the last 
 -- char. Is used to fix paste issues when copying from windows
+<<<<<<< HEAD
 vim.keymap.set("n", "<leader>fw", "$xj")
+=======
+-- the second command is so it can be repeated n times in one
+-- command
+vim.keymap.set("n", "<leader>fw", "$xj")
+vim.keymap.set("c", "fw", ":normal $xj")
+>>>>>>> 7a27300 (first commit)
 
 -- these two add commands for inserting a line above or below
 -- but not entering insert mode

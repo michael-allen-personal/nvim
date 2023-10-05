@@ -23,3 +23,9 @@ vim.opt.incsearch = true
 
 -- min chars from the bottom that your cursor can go
 vim.opt.scrolloff = 8
+<<<<<<< HEAD
+=======
+-- Decrease update time
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+>>>>>>> 7a27300 (first commit)
