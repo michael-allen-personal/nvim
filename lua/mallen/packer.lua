@@ -83,8 +83,8 @@ return require('packer').startup(function(use)
 =======
 	-- Additional lua configuration, makes nvim stuff amazing!
 	use	{'folke/neodev.nvim'}
--- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+	-- Useful status updates for LSP
+	-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 	use	{'j-hui/fidget.nvim'}
 >>>>>>> 7a27300 (first commit)
 	use { 'nvim-treesitter/playground' }
