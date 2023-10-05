@@ -101,8 +101,6 @@ _G.packer_plugins = {
     path = "/home/mallen/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
-<<<<<<< HEAD
-=======
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/mallen/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -113,7 +111,6 @@ _G.packer_plugins = {
     path = "/home/mallen/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
->>>>>>> 7a27300 (first commit)
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/mallen/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -177,15 +174,9 @@ vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType cabalproject ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "cabalproject" }, _G.packer_plugins)]]
-<<<<<<< HEAD
-vim.cmd [[au FileType cabal ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "cabal" }, _G.packer_plugins)]]
-vim.cmd [[au FileType lhaskell ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "lhaskell" }, _G.packer_plugins)]]
-vim.cmd [[au FileType haskell ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "haskell" }, _G.packer_plugins)]]
-=======
 vim.cmd [[au FileType haskell ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "haskell" }, _G.packer_plugins)]]
 vim.cmd [[au FileType lhaskell ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "lhaskell" }, _G.packer_plugins)]]
 vim.cmd [[au FileType cabal ++once lua require("packer.load")({'haskell-tools.nvim'}, { ft = "cabal" }, _G.packer_plugins)]]
->>>>>>> 7a27300 (first commit)
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 
