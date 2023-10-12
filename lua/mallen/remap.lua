@@ -2,7 +2,13 @@ vim.g.mapleader = ' '
 
 -- my mappings
 
--- this one will go to the end of the line and delete the last 
+-- open filesystem
+--vim.keymap.set( 'n', '<leader>fs', vim.cmd.Ex, { desc = 'open [f]ile [s]ystem explorer' })
+
+-- command to write and source the current file
+vim.keymap.set('n', '<leader>ws', ':w<CR>:so<CR>', { desc = '[w]rite and [s]ource the current file' })
+
+-- this one will go to the end of the line and delete the last
 -- char. Is used to fix paste issues when copying from windows
 -- the second command is so it can be repeated n times in one
 -- command
@@ -14,12 +20,13 @@ vim.keymap.set("c", "fw", ":normal $xj", { desc = '[f]ix [w]indows paste' })
 vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = 'inser line below without entering insert' })
 vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = 'inser line above without entering insert' })
 
+vim.keymap.set("n", "<C-a>", "gg0vGG$", { desc = 'Select all text in the buffer' })
+
 -- primaegen mappings
 
 -- creates mapping so ' fs' opens the filesystem explorer
 -- the 'n' mode means you dont type : before the commend
 -- for commands that require : we use 'c' mode
-vim.keymap.set({'n', 'c'}, '<leader>fs', vim.cmd.Ex, { desc = 'open [f]ile [s]ystem explorer' })
 
 -- these will move the highlighed text when in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = 'move highlighted text up' })
@@ -48,4 +55,5 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 
 -- this one will populate a search and replace command for the current word
-vim.keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", { desc = 'init [s]earch and [r]eplace for the current word' })
+vim.keymap.set("n", "<leader>sr", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>",
+    { desc = 'init [s]earch and [r]eplace for the current word' })

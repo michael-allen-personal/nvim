@@ -1,0 +1,6 @@
+Create command to do comments, should probably add in the startup for each lsp
+Better fix windows paste command
+Python setup
+CoPilot setup
+See if there is way to just copy entire buffer into the clipboard (in addition to the <C-a> map)
+Figure out how to do a default mapping, then override it when using specific lsps/plugins
