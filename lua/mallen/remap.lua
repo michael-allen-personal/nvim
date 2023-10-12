@@ -7,13 +7,10 @@ vim.g.mapleader = ' '
 
 -- command to write and source the current file
 vim.keymap.set('n', '<leader>ws', ':w<CR>:so<CR>', { desc = '[w]rite and [s]ource the current file' })
+vim.keymap.set('c', 'ws', ':w<CR>:so<CR>', { desc = '[w]rite and [s]ource the current file' })
 
--- this one will go to the end of the line and delete the last
--- char. Is used to fix paste issues when copying from windows
--- the second command is so it can be repeated n times in one
--- command
-vim.keymap.set("n", "<leader>fw", "$xj", { desc = '[f]ix [w]indows paste' })
-vim.keymap.set("c", "fw", ":normal $xj", { desc = '[f]ix [w]indows paste' })
+-- this command removes all the ^M chars that come with pasting something from windows
+vim.keymap.set("n", "<leader>fw", ":%s/\\r//g<CR><C-o>", { desc = '[f]ix [w]indows paste' })
 
 -- these two add commands for inserting a line above or below
 -- but not entering insert mode
