@@ -1,2 +1,4 @@
 # dont sync complied plugins
 plugin/**
+plugin/*
+plugin/packer_compiled.lua

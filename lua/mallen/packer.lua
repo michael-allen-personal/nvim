@@ -58,6 +58,8 @@ return require('packer').startup(function(use)
 
     -- file explorer plugins
     use{ 'nvim-tree/nvim-tree.lua' }
+    -- need to install some font thing and configure this one
+    -- its currently not working
     use{ 'nvim-tree/nvim-web-devicons' }
     -- Additional lua configuration, makes nvim stuff amazing!
     use { 'folke/neodev.nvim' }
@@ -70,7 +72,6 @@ return require('packer').startup(function(use)
     use { 'tpope/vim-fugitive' }
     use { 'tpope/vim-surround' }
     -- Colors
-    use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({ 'bluz71/vim-nightfly-colors', as = 'nightfly' })
     -- automatically set up your configuration after cloning packer.nvim
     -- put this at the end after all plugins
