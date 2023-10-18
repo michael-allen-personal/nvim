@@ -34,7 +34,7 @@ return require('packer').startup(function(use)
         branch = 'v3.x',
         requires = {
             --- Uncomment these if you want to manage LSP servers from neovim
-            { 'williamboman/mason.nvim',          config = true },
+            { 'williamboman/mason.nvim'},
             { 'williamboman/mason-lspconfig.nvim' },
 
             -- LSP Support
@@ -55,6 +55,16 @@ return require('packer').startup(function(use)
         version = '^2', -- Recommended
         ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
     }
+
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+        ft = { "markdown" },
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+    })
+
+    --use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
     -- file explorer plugins
     use{ 'nvim-tree/nvim-tree.lua' }
