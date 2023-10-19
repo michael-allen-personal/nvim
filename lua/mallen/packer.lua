@@ -64,8 +64,6 @@ return require('packer').startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
     })
 
-    --use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
     -- file explorer plugins
     use{ 'nvim-tree/nvim-tree.lua' }
     -- need to install some font thing and configure this one
