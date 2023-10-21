@@ -21,8 +21,8 @@ vim.keymap.set("n", "<C-a>", "gg0vGG$", { desc = 'Select all text in the buffer'
 
 -- these mappings comment and uncomment out the selected text
 -- leaving these as default keybindings as they are for .lua
-vim.api.nvim_set_keymap('v', '\'', ':<C-U>\'<,\'>s/.*/&/g<CR>', { desc = 'comment out selected text', noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '"', ':<C-U>\'<,\'>s///g<CR>', { desc = 'uncomment out selected text', noremap = true, silent = true })
+vim.keymap.set('v', '\'', ':<C-U>\'<,\'>s/.*/--&/g<CR>', { desc = 'comment out selected text', noremap = true, silent = true })
+vim.keymap.set('v', '"', ':<C-U>\'<,\'>s/--//<CR>', { desc = 'uncomment out selected text', noremap = true, silent = true })
 
 -- primaegen mappings
 

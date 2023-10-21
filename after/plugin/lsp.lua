@@ -56,3 +56,8 @@ mason_lspconfig.setup_handlers {
     }
   end
 }
+
+-- Pass capabilities to haskell_tools
+
+
+
