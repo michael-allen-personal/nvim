@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
     use{ 'nvim-tree/nvim-tree.lua' }
     -- need to install some font thing and configure this one
     -- its currently not working
-    use{ 'nvim-tree/nvim-web-devicons' }
+--    use{ 'nvim-tree/nvim-web-devicons' }
     -- Additional lua configuration, makes nvim stuff amazing!
     use { 'folke/neodev.nvim' }
     -- Useful status updates for LSP
