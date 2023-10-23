@@ -38,3 +38,6 @@ vim.opt.scrolloff = 8
 -- Decrease update time
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
+
+-- turn off the mouse while in nvim
+vim.opt.mouse = ""
