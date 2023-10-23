@@ -14,4 +14,6 @@ icons for tree
 
 For haskell: the shift-k doesnt work for locally defined functions (maybe need local hoogle?)
 
+Add commands that will build, run, and build+run the current haskell project
+
 what is project wide go to definition?
