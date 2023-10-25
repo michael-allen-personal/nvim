@@ -29,7 +29,7 @@ vim.keymap.set('v', '\'', ':<C-U>\'<,\'>s/.*/--&/g<CR>', { desc = 'comment out s
 vim.keymap.set('v', '"', ':<C-U>\'<,\'>s/--//<CR>', { desc = 'uncomment out selected text', noremap = true, silent = true, buffer = bufnr })
 
 -- Cabal shortcuts
-vim.keymap.set('n', '<leader>cb', ':! cabal build<CR>', { desc = '[c]abal [b]uild', noremap = true, silent = true, buffer = bufnr })
+-- functions to determine if its a cabal project
 local root_dir = ht.project.root_dir()
 local function find_cabal_file(dir)
     local cmd = 'ls ' .. dir .. '/*.cabal 2>/dev/null'
@@ -52,8 +52,11 @@ local function get_executable_name_from_cabal(cabal_file_path)
     return executable_name
 end
 local cabal_file = find_cabal_file(root_dir)
+
+-- Add cabal commands if cabal project
 if cabal_file then
     local exe_name = get_executable_name_from_cabal(cabal_file)
+    vim.keymap.set('n', '<leader>cb', ':! cabal build<CR>', { desc = '[c]abal [b]uild', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>cr', string.format(':! cabal run %s<CR>', exe_name), { desc = '[c]abal [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>br', string.format(':! cabal build && cabal run %s<CR>', exe_name), { desc = '[c]abal [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
 end
