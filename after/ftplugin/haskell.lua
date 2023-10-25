@@ -58,5 +58,5 @@ if cabal_file then
     local exe_name = get_executable_name_from_cabal(cabal_file)
     vim.keymap.set('n', '<leader>cb', ':! cabal build<CR>', { desc = '[c]abal [b]uild', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>cr', string.format(':! cabal run %s<CR>', exe_name), { desc = '[c]abal [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
-    vim.keymap.set('n', '<leader>br', string.format(':! cabal build && cabal run %s<CR>', exe_name), { desc = '[c]abal [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', '<leader>br', string.format(':! cabal build && cabal run %s<CR>', exe_name), { desc = 'cabal [b]uild and [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
 end
