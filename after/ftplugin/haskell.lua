@@ -60,4 +60,3 @@ if cabal_file then
     vim.keymap.set('n', '<leader>cr', string.format(':! cabal run %s<CR>', exe_name), { desc = '[c]abal [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>br', string.format(':! cabal build && cabal run %s<CR>', exe_name), { desc = '[c]abal [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
 end
-
