@@ -28,6 +28,11 @@ vim.keymap.set('n', '<leader>rq', ht.repl.quit, { desc = 'GHCi [r]epl [q]uit', n
 vim.keymap.set('v', '\'', ':<C-U>\'<,\'>s/.*/--&/g<CR>', { desc = 'comment out selected text', noremap = true, silent = true, buffer = bufnr })
 vim.keymap.set('v', '"', ':<C-U>\'<,\'>s/--//<CR>', { desc = 'uncomment out selected text', noremap = true, silent = true, buffer = bufnr })
 
+-- Change the tab width to 2, which is what the formatters do for indented code
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+
 -- Cabal shortcuts
 -- functions to determine if its a cabal project
 local root_dir = ht.project.root_dir()
@@ -58,5 +63,4 @@ if cabal_file then
     local exe_name = get_executable_name_from_cabal(cabal_file)
     vim.keymap.set('n', '<leader>cb', ':! cabal build<CR>', { desc = '[c]abal [b]uild', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>cr', string.format(':! cabal run %s<CR>', exe_name), { desc = '[c]abal [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
-    vim.keymap.set('n', '<leader>br', string.format(':! cabal build && cabal run %s<CR>', exe_name), { desc = 'cabal [b]uild and [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
 end
