@@ -8,7 +8,8 @@ vim.opt.termguicolors = true
 -- empty setup using defaults
 require("nvim-tree").setup()
 
-vim.keymap.set({ 'n', 'c' }, '<leader>ft', ':NvimTreeToggle<CR>', { desc = 'Toggle [f]ile [t]ree', noremap = true, silent = true  })
+vim.keymap.set({ 'n', 'c' }, '<leader>ft', ':NvimTreeToggle<CR>',
+    { desc = 'Toggle [f]ile [t]ree', noremap = true, silent = true })
 
 --local function my_on_attach(bufnr)
 --    local api = require "nvim-tree.api"

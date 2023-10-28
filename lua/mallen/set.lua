@@ -17,7 +17,7 @@ vim.opt.ttyfast = true
 
 -- This specifies the completion mode for the command line (using Tab)
 -- Complete longest common string, then list alternatives.
-vim.opt.wildmode = {'longest', 'list'}
+vim.opt.wildmode = { 'longest', 'list' }
 
 vim.opt.wrap = true
 

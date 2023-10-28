@@ -6,11 +6,14 @@ vim.g.mapleader = ' '
 --vim.keymap.set( 'n', '<leader>fs', vim.cmd.Ex, { desc = 'open [f]ile [s]ystem explorer' })
 
 -- command to write and source the current file
-vim.keymap.set('n', '<leader>ws', ':w<CR>:so<CR>', { desc = '[w]rite and [s]ource the current file', noremap = true, silent = true })
-vim.keymap.set('c', 'ws', ':w<CR>:so<CR>', { desc = '[w]rite and [s]ource the current file', noremap = true, silent = true})
+vim.keymap.set('n', '<leader>ws', ':w<CR>:so<CR>',
+    { desc = '[w]rite and [s]ource the current file', noremap = true, silent = true })
+vim.keymap.set('c', 'ws', ':w<CR>:so<CR>',
+    { desc = '[w]rite and [s]ource the current file', noremap = true, silent = true })
 
 -- this command removes all the ^M chars that come with pasting something from windows
-vim.keymap.set("n", "<leader>fw", ":%s/\\r//g<CR><C-o>", { desc = '[f]ix [w]indows paste', noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fw", ":%s/\\r//g<CR><C-o>",
+    { desc = '[f]ix [w]indows paste', noremap = true, silent = true })
 
 -- these two add commands for inserting a line above or below
 -- but not entering insert mode
@@ -21,8 +24,10 @@ vim.keymap.set("n", "<C-a>", "gg0vGG$", { desc = 'Select all text in the buffer'
 
 -- these mappings comment and uncomment out the selected text
 -- leaving these as default keybindings as they are for .lua
-vim.keymap.set('v', '\'', ':<C-U>\'<,\'>s/.*/--&/g<CR>', { desc = 'comment out selected text', noremap = true, silent = true })
-vim.keymap.set('v', '"', ':<C-U>\'<,\'>s/--//<CR>', { desc = 'uncomment out selected text', noremap = true, silent = true })
+vim.keymap.set('v', '\'', ':<C-U>\'<,\'>s/.*/--&/g<CR>',
+    { desc = 'comment out selected text', noremap = true, silent = true })
+vim.keymap.set('v', '"', ':<C-U>\'<,\'>s/--//<CR>',
+    { desc = 'uncomment out selected text', noremap = true, silent = true })
 
 -- primaegen mappings
 
