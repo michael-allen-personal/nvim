@@ -19,7 +19,7 @@ vim.opt.ttyfast = true
 -- Complete longest common string, then list alternatives.
 vim.opt.wildmode = {'longest', 'list'}
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
