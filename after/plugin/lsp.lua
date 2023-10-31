@@ -47,7 +47,7 @@ require('mason').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
     -- NOTE: Haskell LSP is configured by haskell-tools
-    -- rust_analyzer = {},
+    rust_analyzer = {},
     -- tsserver = {},
     -- html = { filetypes = { 'html', 'twig', 'hbs'} },
     lua_ls = {
