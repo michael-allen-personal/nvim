@@ -74,4 +74,7 @@ if cabal_file then
         { desc = '[c]abal [b]uild', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>cr', string.format(':! cabal run %s<CR>', exe_name),
         { desc = '[c]abal [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', '<leader>cp',
+        string.format(':! cabal build --enable-profiling && cabal run %s -- +RTS -p<CR>', exe_name),
+        { desc = '[c]abal [p]rofile current project exe', noremap = true, silent = true, buffer = bufnr })
 end
