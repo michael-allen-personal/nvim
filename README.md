@@ -13,3 +13,5 @@ For markdown files, see if I can create an abbreviation or something that gets u
 icons for tree
 
 format on save
+
+Look into [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) plugin

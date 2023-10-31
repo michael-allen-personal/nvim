@@ -1,8 +1,9 @@
--- see mason.lua for the additional config
-local lsp_zero = require("lsp-zero")
+-- Most of this configuration is based off kickstart.nvim LSP config section
+
+-- [[ Default LSP Keybinds Setup ]]
 
 -- first argument is client, but its currently not being used
-lsp_zero.on_attach(function(_, bufnr)
+local on_attach = function(_, bufnr)
     -- mostly some default lsp-zero keybinds, with some additions for claritys sake
     vim.keymap.set('n', 'K', vim.lsp.buf.hover,
         { desc = 'Hover Documentation', noremap = true, silent = true, buffer = bufnr })
@@ -35,17 +36,23 @@ lsp_zero.on_attach(function(_, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
-end)
+end
 
+-- [[ Mason Setup ]]
+
+-- mason-lspconfig requires that these setup functions are called in this order
+-- before setting up the servers.
 require('mason').setup()
+require('mason-lspconfig').setup()
 
+local servers = {
 --  Enable the following language servers
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
---
+
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
-local servers = {
+
     -- NOTE: Haskell LSP is configured by haskell-tools
     rust_analyzer = {},
     -- tsserver = {},
@@ -79,4 +86,53 @@ mason_lspconfig.setup_handlers {
             filetypes = (servers[server_name] or {}).filetypes,
         }
     end
+}
+
+-- [[ Configure nvim-cmp ]]
+-- enables completion capabilities
+-- See `:help cmp`
+local cmp = require 'cmp'
+local luasnip = require 'luasnip'
+require('luasnip.loaders.from_vscode').lazy_load()
+luasnip.config.setup {}
+
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert {
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete {},
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_locally_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.locally_jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
 }

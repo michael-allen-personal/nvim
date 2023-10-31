@@ -29,24 +29,23 @@ return require('packer').startup(function(use)
         end,
     }
 
+    -- LSP Plugins
     use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v3.x',
+        'neovim/nvim-lspconfig',
         requires = {
-            --- Uncomment these if you want to manage LSP servers from neovim
+            -- These let us manage lsp servers from inside neovim
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
+            -- Useful status updates for LSP
+            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+            { 'j-hui/fidget.nvim',                tag = 'legacy', opts = {} },
 
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' },
-            { 'hrsh7th/cmp-nvim-lsp' },
-            { 'L3MON4D3/LuaSnip' },
-            { 'github/copilot.vim' },
+            -- Additional lua configuration, makes nvim stuff amazing!
+            { 'folke/neodev.nvim' },
         }
     }
 
+    -- Haskell utilities
     use {
         'mrcjkb/haskell-tools.nvim',
         dependencies = {
@@ -56,6 +55,7 @@ return require('packer').startup(function(use)
         ft = { 'haskell', 'lhaskell', 'cabal', 'cabalproject' },
     }
 
+    -- Markdown utilities
     -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
@@ -64,24 +64,42 @@ return require('packer').startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
     })
 
+    -- Autocompletion
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {
+            -- Snippet Engine & its associated nvim-cmp source
+            { 'L3MON4D3/LuaSnip' },
+            { 'saadparwaiz1/cmp_luasnip' },
+
+            -- Adds LSP completion capabilities
+            { 'hrsh7th/cmp-nvim-lsp' },
+
+            -- Adds a number of user-friendly snippets
+            { 'rafamadriz/friendly-snippets' },
+
+            -- copilot
+            { 'github/copilot.vim' },
+        }
+    }
+
     -- file explorer plugins
     use { 'nvim-tree/nvim-tree.lua' }
     -- need to install some font thing and configure this one
     -- its currently not working
     --    use{ 'nvim-tree/nvim-web-devicons' }
-    -- Additional lua configuration, makes nvim stuff amazing!
-    use { 'folke/neodev.nvim' }
-    -- Useful status updates for LSP
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    use { 'j-hui/fidget.nvim' }
+
+    -- Other plugins
     use { 'nvim-treesitter/playground' }
     use { 'theprimeagen/harpoon' }
     use { 'mbbill/undotree' }
     use { 'tpope/vim-fugitive' }
     use { 'tpope/vim-surround' }
     use { 'windwp/nvim-autopairs' }
+
     -- Colors
     use({ 'bluz71/vim-nightfly-colors', as = 'nightfly' })
+
     -- automatically set up your configuration after cloning packer.nvim
     -- put this at the end after all plugins
     if packer_bootstrap then

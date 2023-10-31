@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/michael/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/copilot.vim",
@@ -93,6 +98,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/michael/.local/share/nvim/site/pack/packer/start/fidget.nvim",
     url = "https://github.com/j-hui/fidget.nvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/michael/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   harpoon = {
     loaded = true,
@@ -105,11 +115,6 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/michael/.local/share/nvim/site/pack/packer/opt/haskell-tools.nvim",
     url = "https://github.com/mrcjkb/haskell-tools.nvim"
-  },
-  ["lsp-zero.nvim"] = {
-    loaded = true,
-    path = "/home/michael/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
-    url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = false,
