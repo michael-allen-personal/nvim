@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
     use { 'mbbill/undotree' }
     use { 'tpope/vim-fugitive' }
     use { 'tpope/vim-surround' }
+    use { 'windwp/nvim-autopairs' }
     -- Colors
     use({ 'bluz71/vim-nightfly-colors', as = 'nightfly' })
     -- automatically set up your configuration after cloning packer.nvim
