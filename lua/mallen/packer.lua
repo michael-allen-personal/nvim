@@ -91,10 +91,16 @@ return require('packer').startup(function(use)
     }
 
     -- file explorer plugins
-    use { 'nvim-tree/nvim-tree.lua' }
-    -- need to install some font thing and configure this one
-    -- its currently not working
-    --    use{ 'nvim-tree/nvim-web-devicons' }
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+        }
+    }
 
     -- Other plugins
     use { 'nvim-treesitter/playground' }
