@@ -9,6 +9,10 @@ local highlights = require("neo-tree.ui.highlights")
 
 require("neo-tree").setup({
     filesystem = {
+        window = {
+            position = 'left',
+            width = 30,
+        },
         components = {
             -- unused function input is state
             harpoon_index = function(config, node, _)
