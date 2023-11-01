@@ -14,4 +14,4 @@ icons for tree
 
 format on save
 
-Look into [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) plugin
+Look into [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) plugin configuration

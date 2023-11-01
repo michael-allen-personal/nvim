@@ -9,8 +9,7 @@ ht.lsp.start()
 local bufnr = vim.api.nvim_get_current_buf()
 -- haskell-language-server relies heavily on codeLenses,
 -- so auto-refresh (see advanced configuration) is enabled by default
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action,
-    { desc = '[c]ode [a]ctions', noremap = true, silent = true, buffer = bufnr })
+--
 --vim.keymap.set('n', '<leader>cr', vim.lsp.codelens.run, { noremap = true, silent = true, buffer = bufnr })
 -- Hoogle search for the type signature of the definition under the cursor
 vim.keymap.set('n', '<leader>hs', ht.hoogle.hoogle_signature,
@@ -29,11 +28,13 @@ vim.keymap.set('n', '<leader>rq', ht.repl.quit,
     { desc = 'GHCi [r]epl [q]uit', noremap = true, silent = true, buffer = bufnr })
 
 -- My mappings
--- These mappings comment and uncomment out the selected text
-vim.keymap.set('v', '\'', ':<C-U>\'<,\'>s/.*/--&/g<CR>',
-    { desc = 'comment out selected text', noremap = true, silent = true, buffer = bufnr })
-vim.keymap.set('v', '"', ':<C-U>\'<,\'>s/--//<CR>',
-    { desc = 'uncomment out selected text', noremap = true, silent = true, buffer = bufnr })
+local ft_helpers = require('mallen.ft_helpers')
+-- This adds a function the create keymaps for commenting and uncommenting out selected text
+ft_helpers.add_comment_keymaps('--', bufnr)
+--vim.keymap.set('v', '\'', ':<C-U>\'<,\'>s/.*/--&/g<CR>',
+--    { desc = 'comment out selected text', noremap = true, silent = true, buffer = bufnr })
+--vim.keymap.set('v', '"', ':<C-U>\'<,\'>s/--//<CR>',
+--    { desc = 'uncomment out selected text', noremap = true, silent = true, buffer = bufnr })
 
 -- Change the tab width to 2, which is what the formatters do for indented code
 vim.opt.tabstop = 2

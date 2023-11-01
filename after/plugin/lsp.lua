@@ -4,7 +4,6 @@
 
 -- first argument is client, but its currently not being used
 local on_attach = function(_, bufnr)
-    -- mostly some default lsp-zero keybinds, with some additions for claritys sake
     vim.keymap.set('n', 'K', vim.lsp.buf.hover,
         { desc = 'Hover Documentation', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition,
@@ -91,8 +90,8 @@ mason_lspconfig.setup_handlers {
 -- [[ Configure nvim-cmp ]]
 -- enables completion capabilities
 -- See `:help cmp`
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp = require('cmp')
+local luasnip = require('luasnip')
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
