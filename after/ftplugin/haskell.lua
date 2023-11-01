@@ -31,10 +31,6 @@ vim.keymap.set('n', '<leader>rq', ht.repl.quit,
 local ft_helpers = require('mallen.ft_helpers')
 -- This adds a function the create keymaps for commenting and uncommenting out selected text
 ft_helpers.add_comment_keymaps('--', bufnr)
---vim.keymap.set('v', '\'', ':<C-U>\'<,\'>s/.*/--&/g<CR>',
---    { desc = 'comment out selected text', noremap = true, silent = true, buffer = bufnr })
---vim.keymap.set('v', '"', ':<C-U>\'<,\'>s/--//<CR>',
---    { desc = 'uncomment out selected text', noremap = true, silent = true, buffer = bufnr })
 
 -- Change the tab width to 2, which is what the formatters do for indented code
 vim.opt.tabstop = 2

@@ -3,7 +3,8 @@
 vim.defer_fn(function()
     require 'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all" (the five listed parsers should always be installed
-        ensure_installed = { "rust", "c", "lua", "vim", "vimdoc", "query", "dockerfile", "gitignore", "haskell", "python", "r" },
+        ensure_installed = { "rust", "c", "lua", "vim", "vimdoc", "query", "dockerfile", "gitignore", "haskell",
+            "python", "r" },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
