@@ -64,6 +64,13 @@ return require('packer').startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
     })
 
+    use({
+        'epwalsh/obsidian.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+        },
+    })
+
     -- Autocompletion
     use {
         'hrsh7th/nvim-cmp',
