@@ -1,6 +1,5 @@
 # NeoVIM Config Folder
 ## TODO
-Spellcheck?
 
 Python setup
 
