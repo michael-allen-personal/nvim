@@ -20,6 +20,8 @@ vim.keymap.set("n", "<leader>fw", ":%s/\\r//g<CR><C-o>",
 vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = 'inser line below without entering insert' })
 vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = 'inser line above without entering insert' })
 
+-- entire buffer commands
+vim.keymap.set('n', '<leader>ya', ':%y+<CR>', { desc = '[y]ank [a]ll, or copy the entire buffer into the clipboard' })
 vim.keymap.set("n", "<C-a>", "gg0vGG$", { desc = 'Select all text in the buffer' })
 
 -- primaegen mappings
