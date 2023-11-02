@@ -8,3 +8,5 @@ For markdown files, see if I can create an abbreviation or something that gets u
 Look into [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) plugin configuration
 
 Consider moving the "get project exe name" function to ft_helpers, its currently commented out in rust.lua
+
+Add something for fixing indentation of comments on format. Lets make it pretty :)
