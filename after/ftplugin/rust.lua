@@ -46,4 +46,6 @@ if cargo_file then
         { desc = '[c]argo [c]heck', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>cr', ':! cargo run<CR>',
         { desc = '[c]argo [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', '<leader>cd', ':! cargo doc --open<CR>',
+        { desc = '[c]argo generate local [d]ocs and open in browser', noremap = true, silent = true, buffer = bufnr })
 end
