@@ -10,3 +10,9 @@ Look into [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) plugin confi
 Consider moving the "get project exe name" function to ft_helpers, its currently commented out in rust.lua
 
 Add something for fixing indentation of comments on format. Lets make it pretty :)
+
+Look into completion options, currently haskell-tools is different than the config I have in lsp.lua, see which one I like more and use it for both
+
+See if I can change :term to open a terminal in a new horizontal window below (maybe above like ghci in haskell?) the current window, this window should be smaller than the main window, currently its equal size
+
+Maybe add commands for insert mode to move right/left, so i can move past autocomplete stuff without using the arrow keys
