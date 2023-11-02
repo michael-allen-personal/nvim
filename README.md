@@ -7,4 +7,4 @@ For markdown files, see if I can create an abbreviation or something that gets u
 
 Look into [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) plugin configuration
 
-Finish cargo compile commands like the cabal compile commands
+Consider moving the "get project exe name" function to ft_helpers, its currently commented out in rust.lua

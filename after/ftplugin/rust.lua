@@ -18,14 +18,31 @@ rt.setup({
 -- My mappings
 -- This adds a function the create keymaps for commenting and uncommenting out selected text
 ft_helpers.add_comment_keymaps('\\/\\/', bufnr)
---local root_dir =
---local crate_file = ft_helpers.find_project_file(root_dir, '.toml')
---if crate_file then
---    local exe_name = get_executable_name_from_cabal(crate_file)
---    vim.keymap.set('n', '<leader>cb', ':! cargo build<CR>',
---        { desc = '[c]argo [b]uild', noremap = true, silent = true, buffer = bufnr })
---    vim.keymap.set('n', '<leader>cc', ':! cargo check<CR>',
---        { desc = '[c]argo [c]heck', noremap = true, silent = true, buffer = bufnr })
---    vim.keymap.set('n', '<leader>cr', string.format(':! cargo run %s<CR>', exe_name),
---        { desc = '[c]argo [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
+-- Below assumes the working directory is the project root
+-- Which should normally be true based on my usage patterns
+local current_dir = vim.fn.getcwd()
+local cargo_file = ft_helpers.find_project_file(current_dir, '.toml')
+
+--local function get_executable_name_from_cargo(cargo_file_path)
+--    local executable_name
+--    for line in io.lines(cargo_file_path) do
+--        -- Match "name = <executable_name>" pattern in .cargo file
+--        -- Pretty sure this only gets the first match
+--        local match = line:match('name%s*=%s*"(.-)"')
+--        if match then
+--            executable_name = match
+--            break
+--        end
+--    end
+--    return executable_name
 --end
+
+if cargo_file then
+    --    local exe_name = get_executable_name_from_cargo(cargo_file)
+    vim.keymap.set('n', '<leader>cb', ':! cargo build<CR>',
+        { desc = '[c]argo [b]uild', noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', '<leader>cc', ':! cargo check<CR>',
+        { desc = '[c]argo [c]heck', noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', '<leader>cr', ':! cargo run<CR>',
+        { desc = '[c]argo [r]un current project exe', noremap = true, silent = true, buffer = bufnr })
+end
