@@ -31,4 +31,12 @@ M.format_on_save_for = function(filetypes, bufnr, fmtopts)
     vim.api.nvim_command('augroup END')
 end
 
+M.find_project_file = function(dir, fileExtension)
+    local cmd = 'ls ' .. dir .. string.format('/*.cabal 2>/dev/null', fileExtension)
+    local file = io.popen(cmd)
+    local filename = file:read("*l")
+    file:close()
+    return filename
+end
+
 return M

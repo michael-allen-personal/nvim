@@ -53,7 +53,8 @@ local servers = {
     --  define the property 'filetypes' to the map in question.
 
     -- NOTE: Haskell LSP is configured by haskell-tools
-    rust_analyzer = {},
+    --       Rust LSP is configured by rust-tools
+
     -- tsserver = {},
     -- html = { filetypes = { 'html', 'twig', 'hbs'} },
     lua_ls = {

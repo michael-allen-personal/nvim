@@ -64,6 +64,9 @@ return require('packer').startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
     })
 
+    -- Rust utilities
+    use { 'simrat39/rust-tools.nvim' }
+
     use({
         'epwalsh/obsidian.nvim',
         requires = {
@@ -89,6 +92,9 @@ return require('packer').startup(function(use)
             { 'github/copilot.vim' },
         }
     }
+
+    -- Debugging
+    use { 'mfussenegger/nvim-dap' }
 
     -- file explorer plugins
     use {

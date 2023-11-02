@@ -40,13 +40,6 @@ vim.opt.shiftwidth = 2
 -- Cabal shortcuts
 -- functions to determine if its a cabal project
 local root_dir = ht.project.root_dir()
-local function find_cabal_file(dir)
-    local cmd = 'ls ' .. dir .. '/*.cabal 2>/dev/null'
-    local file = io.popen(cmd)
-    local filename = file:read("*l")
-    file:close()
-    return filename
-end
 
 local function get_executable_name_from_cabal(cabal_file_path)
     local executable_name
@@ -62,7 +55,7 @@ local function get_executable_name_from_cabal(cabal_file_path)
     return executable_name
 end
 
-local cabal_file = find_cabal_file(root_dir)
+local cabal_file = ft_helpers.find_project_file(root_dir, '.cabal')
 
 -- Add cabal commands if cabal project
 if cabal_file then
