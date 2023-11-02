@@ -8,6 +8,7 @@ require 'nvim-web-devicons'.setup()
 local highlights = require("neo-tree.ui.highlights")
 
 require("neo-tree").setup({
+    close_if_last_window = true,
     filesystem = {
         window = {
             position = 'left',
