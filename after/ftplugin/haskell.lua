@@ -7,6 +7,8 @@ vim.cmd('PackerLoad haskell-tools.nvim')
 local ht = require('haskell-tools')
 ht.lsp.start()
 local bufnr = vim.api.nvim_get_current_buf()
+require('mallen.lsp_helpers').set_default_lsp_keymaps({}, bufnr)
+
 -- haskell-language-server relies heavily on codeLenses,
 -- so auto-refresh (see advanced configuration) is enabled by default
 --

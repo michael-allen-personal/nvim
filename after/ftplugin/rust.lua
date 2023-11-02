@@ -1,6 +1,7 @@
 local bufnr = vim.api.nvim_get_current_buf()
 local rt = require("rust-tools")
 local ft_helpers = require('mallen.ft_helpers')
+require('mallen.lsp_helpers').set_default_lsp_keymaps({}, bufnr)
 
 rt.setup({
     server = {
