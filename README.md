@@ -16,3 +16,5 @@ Look into completion options, currently haskell-tools is different than the conf
 Look into these suggestions for switching windows: https://neovim.io/doc/user/nvim_terminal_emulator.html#terminal-input
 
 Maybe add commands for insert mode to move right/left, so i can move past autocomplete stuff without using the arrow keys
+
+See this thread about haskell lint: https://www.reddit.com/r/haskell/comments/17m6ord/thoughts_on_eta_reduction/
