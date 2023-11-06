@@ -31,12 +31,16 @@ M.format_on_save_for = function(filetypes, bufnr, fmtopts)
     vim.api.nvim_command('augroup END')
 end
 
-M.find_project_file = function(dir, fileExtension)
-    local cmd = 'ls ' .. dir .. string.format('/*%s 2>/dev/null', fileExtension)
-    local file = io.popen(cmd)
-    local filename = file:read("*l")
-    file:close()
-    return filename
+M.find_files_by_extension = function(start_dir, extension)
+    local command = string.format("find %s -type f -name '*.%s'", start_dir, extension)
+    local handle = io.popen(command)
+    local result = handle:read("*a")
+    handle:close()
+    local paths = {}
+    for path in result:gmatch("[^\n]+") do
+        table.insert(paths, path)
+    end
+    return paths
 end
 
 return M

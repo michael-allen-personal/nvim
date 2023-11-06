@@ -22,7 +22,8 @@ ft_helpers.add_comment_keymaps('\\/\\/', bufnr)
 -- Below assumes the working directory is the project root
 -- Which should normally be true based on my usage patterns
 local current_dir = vim.fn.getcwd()
-local cargo_file = ft_helpers.find_project_file(current_dir, '.toml')
+-- Need to handle the case where there are multiple results
+local cargo_file = ft_helpers.find_files_by_extension(current_dir, 'toml')[1]
 
 --local function get_executable_name_from_cargo(cargo_file_path)
 --    local executable_name
