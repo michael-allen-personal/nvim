@@ -18,3 +18,5 @@ Look into these suggestions for switching windows: https://neovim.io/doc/user/nv
 Maybe add commands for insert mode to move right/left, so i can move past autocomplete stuff without using the arrow keys
 
 See this thread about haskell lint: https://www.reddit.com/r/haskell/comments/17m6ord/thoughts_on_eta_reduction/
+
+For obsidian, see if there is a good way to quickly import a template into a file in nvim
