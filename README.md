@@ -20,3 +20,5 @@ Maybe add commands for insert mode to move right/left, so i can move past autoco
 See this thread about haskell lint: https://www.reddit.com/r/haskell/comments/17m6ord/thoughts_on_eta_reduction/
 
 For obsidian, see if there is a good way to quickly import a template into a file in nvim
+
+Look into how I could use the surround plugin to do bold/italics surround in .md files
