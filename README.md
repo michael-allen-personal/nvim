@@ -22,3 +22,7 @@ See this thread about haskell lint: https://www.reddit.com/r/haskell/comments/17
 For obsidian, see if there is a good way to quickly import a template into a file in nvim
 
 Look into how I could use the surround plugin to do bold/italics surround in .md files
+
+Spellcheck suggestion menu like autocomplete?
+
+Annoying behavior for Obsidian note references, its leaving weird artifacts behind after suggesting, and the second letter is always being replaced for some weird reason and I have to go back and fix it every time
