@@ -26,3 +26,5 @@ Look into how I could use the surround plugin to do bold/italics surround in .md
 Spellcheck suggestion menu like autocomplete?
 
 Annoying behavior for Obsidian note references, its leaving weird artifacts behind after suggesting, and the second letter is always being replaced for some weird reason and I have to go back and fix it every time
+
+Abbreviations for contractions?
