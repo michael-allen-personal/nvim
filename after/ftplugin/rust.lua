@@ -25,20 +25,6 @@ local current_dir = vim.fn.getcwd()
 -- Need to handle the case where there are multiple results
 local cargo_file = ft_helpers.find_files_by_extension(current_dir, 'toml')[1]
 
---local function get_executable_name_from_cargo(cargo_file_path)
---    local executable_name
---    for line in io.lines(cargo_file_path) do
---        -- Match "name = <executable_name>" pattern in .cargo file
---        -- Pretty sure this only gets the first match
---        local match = line:match('name%s*=%s*"(.-)"')
---        if match then
---            executable_name = match
---            break
---        end
---    end
---    return executable_name
---end
-
 if cargo_file then
     --    local exe_name = get_executable_name_from_cargo(cargo_file)
     vim.keymap.set('n', '<leader>cb', ':! cargo build<CR>',
