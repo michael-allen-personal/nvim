@@ -27,7 +27,7 @@ vim.keymap.set("n", "<C-a>", "gg0vGG$", { desc = 'Select all text in the buffer'
 vim.keymap.set('i', '<C-h>', '<C-o>h', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-j>', '<C-o>j', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-k>', '<C-o>k', { noremap = true, silent = true })
-vim.keymap.set('i', '<C-l>', '<C-o>l', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-l>', '<C-o>a', { noremap = true, silent = true })
 
 -- primaegen mappings
 
