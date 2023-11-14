@@ -24,6 +24,7 @@ vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = 'inser line above without en
 vim.keymap.set('n', '<leader>ya', ':%y+<CR>', { desc = '[y]ank [a]ll, or copy the entire buffer into the clipboard' })
 vim.keymap.set("n", "<C-a>", "gg0vGG$", { desc = 'Select all text in the buffer' })
 
+-- Move around while in insert mode with normal keys
 vim.keymap.set('i', '<C-h>', '<C-o>h', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-j>', '<C-o>j', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-k>', '<C-o>k', { noremap = true, silent = true })
