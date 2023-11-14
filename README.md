@@ -9,7 +9,7 @@ Look into [obsidian.nvim](https://github.com/epwalsh/obsidian.nvim) plugin confi
 
 Add something for fixing indentation of comments on format. Lets make it pretty :)
 
-Look into completion options, currently haskell-tools is different than the config I have in lsp.lua, see which one I like more and use it for both
+Look into completion options, currently haskell-tools is different than the config I have in lsp.lua, see which one I like more and use it for both.
 
 Look into these suggestions for switching windows: https://neovim.io/doc/user/nvim_terminal_emulator.html#terminal-input
 
@@ -24,3 +24,5 @@ Spellcheck suggestion menu like autocomplete?
 Annoying behavior for Obsidian note references, its leaving weird artifacts behind after suggesting, and the second letter is always being replaced for some weird reason and I have to go back and fix it every time
 
 Abbreviations for contractions?
+
+rust-tools autocomplete behavior is somewhat annoying in how it autofocuses sometimes. I prefer the behavior where I have to do <C-N> to go to the first suggestion instead of it automatically being highlighted
