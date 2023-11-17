@@ -11,9 +11,9 @@ Add something for fixing indentation of comments on format. Lets make it pretty 
 
 Look into completion options, currently haskell-tools is different than the config I have in lsp.lua, see which one I like more and use it for both.
 
-Look into these suggestions for switching windows: https://neovim.io/doc/user/nvim_terminal_emulator.html#terminal-input
+Look into [these suggestions](https://neovim.io/doc/user/nvim_terminal_emulator.html#terminal-input) for switching windows: 
 
-See this thread about haskell lint: https://www.reddit.com/r/haskell/comments/17m6ord/thoughts_on_eta_reduction/
+See [this thread](https://www.reddit.com/r/haskell/comments/17m6ord/thoughts_on_eta_reduction/) about haskell lint: 
 
 For obsidian, see if there is a good way to quickly import a template into a file in nvim
 
@@ -26,3 +26,5 @@ Annoying behavior for Obsidian note references, its leaving weird artifacts behi
 Abbreviations for contractions?
 
 rust-tools autocomplete behavior is somewhat annoying in how it autofocuses sometimes. I prefer the behavior where I have to do <C-N> to go to the first suggestion instead of it automatically being highlighted
+
+check out [this plugin](https://github.com/ggandor/leap.nvim) for quick moving around
