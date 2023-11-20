@@ -29,6 +29,8 @@ if cargo_file then
     --    local exe_name = get_executable_name_from_cargo(cargo_file)
     vim.keymap.set('n', '<leader>cb', ':! cargo build<CR>',
         { desc = '[c]argo [b]uild', noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', '<leader>ct', ':! cargo test<CR>',
+        { desc = '[c]argo [t]est', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>cc', ':! cargo check<CR>',
         { desc = '[c]argo [c]heck', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>cr', ':! cargo run<CR>',
