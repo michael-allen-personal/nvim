@@ -17,8 +17,8 @@ vim.keymap.set("n", "<leader>fw", ":%s/\\r//g<CR><C-o>",
 
 -- these two add commands for inserting a line above or below
 -- but not entering insert mode
-vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = 'inser line below without entering insert' })
-vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = 'inser line above without entering insert' })
+vim.keymap.set("n", "<leader>o", "o<Esc>", { desc = 'insert line below without entering insert' })
+vim.keymap.set("n", "<leader>O", "O<Esc>", { desc = 'insert line above without entering insert' })
 
 -- entire buffer commands
 vim.keymap.set('n', '<leader>ya', ':%y+<CR>', { desc = '[y]ank [a]ll, or copy the entire buffer into the clipboard' })
@@ -50,10 +50,12 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- when in visual mode, if you are pasting some text
 -- over some other text, keep the pasted text in the clipboard
-vim.keymap.set("x", "<leader>p", "\"_dP", { desc = 'paste highlighted word but dont override clipboard' })
+-- the "x" means only in visual mode (as opposed to "s" for select mode, and "v" for both visual and select modes)
+vim.keymap.set("x", "<leader>p", "\"_dP", { desc = '[p]aste highlighted word but dont override clipboard' })
 -- this does the same for delete in visual and normal
-vim.keymap.set("v", "<leader>d", "\"_d")
-vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d", { desc = '[d]elete highlighted word but dont override clipboard' })
+vim.keymap.set("n", "<leader>d", "\"_d",
+    { desc = '[d]elete command but without overriding the clipboard. Can follow up with iw, aw, etc.' })
 
 -- these have something to do with quickfix navigation
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")

@@ -10,9 +10,7 @@ vim.cmd("iab wont won't")
 vim.cmd("iab yall y'all")
 
 -- Capitalization fixes
-vim.cmd('iab haskell Haskell')
-vim.cmd('iab oauth OAuth')
-vim.cmd('iab oidc OIDC')
+-- For the most part these are in the markdown ftplugin, as words like Haskell or OAuth do not need to be fixed in code, only in documentation
 
 -- Regular shorthand abbreviations
 -- something like b/c -> because would go here but vim doesnt support / in
