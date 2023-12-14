@@ -6,6 +6,7 @@ vim.cmd('iab tihs this')
 -- Contraction fixes
 vim.cmd("iab cant can't")
 vim.cmd("iab dont don't")
+vim.cmd("iab didnt didn't")
 vim.cmd("iab wont won't")
 vim.cmd("iab yall y'all")
 
