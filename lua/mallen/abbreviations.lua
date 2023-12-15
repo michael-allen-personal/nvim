@@ -9,6 +9,7 @@ vim.cmd("iab dont don't")
 vim.cmd("iab didnt didn't")
 vim.cmd("iab wont won't")
 vim.cmd("iab yall y'all")
+vim.cmd("iab ive I've")
 
 -- Capitalization fixes
 -- For the most part these are in the markdown ftplugin, as words like Haskell or OAuth do not need to be fixed in code, only in documentation
