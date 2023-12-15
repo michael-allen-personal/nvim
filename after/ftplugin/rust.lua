@@ -38,5 +38,9 @@ if cargo_file then
     vim.keymap.set('n', '<leader>cd', ':! cargo doc --open<CR>',
         { desc = '[c]argo generate local [d]ocs and open in browser', noremap = true, silent = true, buffer = bufnr })
     vim.keymap.set('n', '<leader>cl', ':18split | terminal cargo clippy<CR>',
-        { desc = '[c]argo [l]int using clippy', noremap = true, silent = true, buffer = bufnr })
+        { desc = '[c]lippy [l]int with default lints', noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', '<leader>ll', ':18split | terminal cargo clippy -- -W clippy::pedantic<CR>',
+        { desc = '[l]int using clippy with [p]edantic settings', noremap = true, silent = true, buffer = bufnr })
+    vim.keymap.set('n', '<leader>lf', ':! cargo clippy --fix<CR>',
+        { desc = '[l]int using clippy and [f]ix any mistakes it finds', noremap = true, silent = true, buffer = bufnr })
 end
