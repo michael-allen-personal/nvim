@@ -28,6 +28,9 @@ M.set_default_lsp_keymaps = function(_, bufnr)
     vim.keymap.set('n', ']d', vim.diagnostic.goto_prev,
         { desc = 'Goto next diagnostic', noremap = true, silent = true, buffer = bufnr })
 
+    -- LSP format keymap
+    vim.keymap.set('n', '<leader>fm', vim.lsp.buf.format,
+        { desc = '[f]or[m]at current buffer using the LSP', noremap = true, silent = true, buffer = bufnr })
     -- Create a command `:Format` local to the LSP buffer
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
