@@ -11,3 +11,6 @@ kata
 enum
 uploader
 linter
+comonad
+ALSA
+PulseAudio
