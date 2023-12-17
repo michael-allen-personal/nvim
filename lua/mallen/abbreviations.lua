@@ -20,4 +20,3 @@ vim.cmd("iab ive I've")
 -- abbreviations because it is a protected charecter
 
 -- Technical shorthand abbreviations
-vim.cmd('iab FP functional programming')
