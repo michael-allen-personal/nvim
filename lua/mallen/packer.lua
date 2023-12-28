@@ -117,6 +117,7 @@ return require('packer').startup(function(use)
     use { 'windwp/nvim-autopairs' }
 
     -- Colors
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
     use({ 'bluz71/vim-nightfly-colors', as = 'nightfly' })
 
     -- automatically set up your configuration after cloning packer.nvim

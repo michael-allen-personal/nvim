@@ -28,3 +28,7 @@ Abbreviations for contractions?
 rust-tools autocomplete behavior is somewhat annoying in how it autofocuses sometimes. I prefer the behavior where I have to do <C-N> to go to the first suggestion instead of it automatically being highlighted
 
 check out [this plugin](https://github.com/ggandor/leap.nvim) for quick moving around
+
+revisit and see if there is anything more I need to do for the ansible and bash lsps
+
+get the variable night light themes working
